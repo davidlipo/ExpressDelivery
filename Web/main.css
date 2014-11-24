@@ -106,7 +106,6 @@ p{
 	margin-left: auto;
 	margin-right: auto;
 
-	width: 500px;
 }
 .content .header{
 	display: inline-block;
@@ -224,7 +223,12 @@ p{
 /*----------------Order Registration------------------*/
 
 .registration{
+	display: inline-table;
 	text-align: center;
+}
+
+.orderBox{
+	display: inline-table;
 }
 .registration #headline{
 	display: block;
@@ -312,8 +316,8 @@ p{
 .picWeight[id=bicycle]{
 	background-image: url("img/bicycle.png");
 }
-.picWeight[id=trail]{
-	background-image: url("img/trail.png");
+.picWeight[id=trail2]{
+	background-image: url("img/trail2.png");
 }
 
 input[type=checkbox]{
@@ -324,16 +328,28 @@ input[type=checkbox]{
 /*----------------Confirmation ------------------*/
 
 .registration #result{
-	display: inline-block;
+	display: block;
 	margin: 10px;
 	width: 300px;
 }
 
 .registration #thanks{
-	display: inline-block;
+	display: block;
 	margin-bottom: 75%;
 }
 
 .registration #headline[type=negative]{
 	background-color: #c80000;
+}
+
+.column{
+	display: inline-table;
+	width: 120px;
+}
+
+.row{
+	display:table-row;
+	height: 100px;
+	font-size: 0.8rem;
+	text-align: left;
 }
