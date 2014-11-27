@@ -3,6 +3,35 @@
 	<head>
 		<title> ExpressDelivery</title>
 		<meta charset="UTF-8">
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		
+		<script>
+		var address = 'PICKUP ADDRESS HERE';
+		var name = 'PICKUP NAME HERE';
+		var phone = 'PICKUP PHONE HERE';
+		var email = 'PICKUP EMAIL HERE';
+		$( document ).ready(function() {
+			$('#usePickup').change(function() {
+				if($(this).is(":checked")) {
+					$('#billingInfo').fadeOut(function() {
+						$('#address').attr('value',address);
+						$('#fullName').attr('value',name);
+						$('#phoneNumber').attr('value',phone);
+						$('#email').attr('value',email);
+					});
+				}
+				else {
+					$('#address').attr('value','');
+					$('#fullName').attr('value','');
+					$('#phoneNumber').attr('value','');
+					$('#email').attr('value','');
+					$('#billingInfo').fadeIn();
+				}
+			});
+		});
+		</script>
+		
 	</head>
 	<link rel="stylesheet" href="main.css">
 	<body class="body">
@@ -18,21 +47,23 @@
 		<div class="content">
 			<div class="registration" >
 					<div id="headline">Billing Address</div>
-					<input type="checkbox" name="c" value="pickup"> Use PickUp Address</input>
+					<input type="checkbox" id='usePickup' name="c" value="pickup"> Use PickUp Address</input>
+					<div id='billingInfo'>
 					<input class="input" type="input" id="address" placeholder="Address"> </input>
 					<input class="input" type="input" id="fullName" placeholder="Full Name"> </input>
 					<input class="input" type="input" id="phoneNumber" placeholder="Phone #"> </input>
 					<input class="input" type="input" id="email" placeholder="Email"></input>
+					</div>
 			</div>
 			<div class="registration">
 					<div id="headline">Payment Method</div>
-					<input class="input" type="input" id="fullName" placeholder="Name on the Card"> </input>
+					<input class="input" type="input" id="fullNamePay" placeholder="Name on the Card"> </input>
 					<input class="input" type="input" id="CardNumber" placeholder="Card Number"> </input>
 
 					<input class="input" type="input" id="Expires" placeholder="Expires (05/2001)"> </input>
 					<input class="input" type="input" id="SecurityCode" placeholder="Security Code"> </input>
 			</div>
-			<div class="button" id="order">Pay 7$</div>
+			<a href='paymentresult.html'><div class="button" id="order">Pay 7$</div></a>
 		</div>
 
 		<div class="footer">
