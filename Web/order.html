@@ -8,6 +8,8 @@
 		
 		<script>
 		var selectedSize;
+		var sizes = {'paper': 4, 'smallbox': 10, 'mediumbox': 15, 'bigbox': 20};
+		var transport = {'bicycle': 3, 'trail2': 5};
 		$( document ).ready(function() {
 			selectedSize = 'paper';
 			$('#paper').addClass('picWeightSelected');
@@ -16,6 +18,8 @@
 			selectedTrans = 'bicycle';
 			$('#bicycle').addClass('picWeightSelected');
 			$('#transport').attr('value',selectedTrans);
+			
+			$('#order').html('Order $' + (sizes[selectedSize] + transport[selectedTrans]));
 			
 			$('.picWeight').click(function() {
 				var currentObj = $(this);
@@ -30,6 +34,8 @@
 					$('#size').attr('value',selectedSize);
 				}
 				currentObj.addClass('picWeightSelected');
+				
+				$('#order').html('Order $' + (sizes[selectedSize] + transport[selectedTrans]));
 			});
 			
 			$('#pickupTimeNow').change(function() {
